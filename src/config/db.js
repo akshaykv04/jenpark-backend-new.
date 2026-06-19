@@ -3,7 +3,7 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 
 const connectDB = async () => {
     try {
-        if (process.env.NODE_ENV === 'production' || process.env.MONGO_URI) {
+        if (process.env.NODE_ENV === 'production') {
             // Connect to real MongoDB (Atlas)
             const conn = await mongoose.connect(process.env.MONGO_URI);
             console.log(`MongoDB Connected: ${conn.connection.host}`);
